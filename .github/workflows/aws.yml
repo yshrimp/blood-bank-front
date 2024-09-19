@@ -36,7 +36,7 @@ env:
   # Frontend ECR Repository 설정
   ECR_REPOSITORY: frontend
   # Frontend ECS Service 설정
-  ECS_SERVICE: frontend-cluster-service
+  ECS_SERVICE: frontend-service
   # Frontend ECS Cluster 설정
   ECS_CLUSTER: frontend-cluster
   # Frontend Container Name 설정
