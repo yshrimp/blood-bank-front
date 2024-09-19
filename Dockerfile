@@ -13,6 +13,8 @@ RUN npm install http-proxy-middleware
 # 종속성 설치
 RUN npm install
 
+RUN npm install amazon-cognito-identity-js
+
 # 애플리케이션 실행
 CMD ["npm", "run", "start"]
 
