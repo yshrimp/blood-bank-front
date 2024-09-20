@@ -10,7 +10,7 @@ const Navbar = () => {
       <a href="/home">
         <img src={bdrop} alt="bdroplogo" />
       </a>
-      <a href="/donate">DONATE/REQUEST</a>
+      <a href="/donate">DNATE/REQUEST</a>
       {/* <Search /> */}
       <SearchPage />
     </nav>
