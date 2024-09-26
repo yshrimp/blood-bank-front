@@ -152,11 +152,7 @@ const UserRegister = () => {
       {
         Name: "email",
         Value: userMail,
-      },
-      {
-        Name: "phone_number",
-        Value: userPhone,
-      },
+      }
     ];
 
     // Cognito 사용자 등록
