@@ -165,7 +165,7 @@ const UserRegister = () => {
       console.log("Cognito User registered:", result);
 
       // 나머지 사용자 정보는 서버로 전송하여 데이터베이스에 저장
-      const regurl = "http://localhost:3001/reg/usr";
+      const regurl = "/api/reg/usr";
       Axios.post(regurl, {
         userFName,
         userAge,
