@@ -131,14 +131,13 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import { CognitoUserPool } from "amazon-cognito-identity-js";
+import { awsConfig } from "./aws-exports";  // aws-exports에서 사용자 풀 ID와 앱 클라이언트 ID 가져오기
 import "../../assets/css/UserRegister.css";
 
-const poolData = {
-    UserPoolId: "ap-northeast-2_7bboiuKj8",  // 여기에 실제 Cognito User Pool ID를 입력하세요.
-    ClientId: "44iffcffofdp3vssoff8o0vndg",    // 여기에 실제 Cognito App Client ID를 입력하세요.
-};
-
-const userPool = new CognitoUserPool(poolData);
+const userPool = new CognitoUserPool({
+    UserPoolId: awsConfig.UserPoolId,   // awsConfig에서 UserPoolId 가져옴
+    ClientId: awsConfig.ClientId,       // awsConfig에서 ClientId 가져옴
+});
 
 const UserRegister = () => {
     const [userUserName, setuserUsername] = useState("");
@@ -157,14 +156,15 @@ const UserRegister = () => {
         // Cognito user sign up for username, password, email
         userPool.signUp(userUserName, userPassword, [{ Name: 'email', Value: userMail }], null, (err, result) => {
             if (err) {
-                console.error(err);
+                console.error('Sign-up error', err);
+                alert('Sign-up failed.');
                 return;
             }
             const cognitoUser = result.user;
             console.log('Cognito user registered:', cognitoUser.getUsername());
 
             // Sending additional info to backend
-            Axios.post("/api/user/additional-info", {
+            Axios.post("/api/reg/usr", {
                 userUserName,
                 userFName,
                 userAge,
@@ -175,8 +175,11 @@ const UserRegister = () => {
                 userPlace,
             }).then((response) => {
                 console.log("Additional user info saved:", response);
+                alert("Sign-up successful! Please verify your email.");
+                window.location.href = "/verify-email";  // 이메일 인증 페이지로 이동
             }).catch((error) => {
                 console.error("Error saving additional info:", error);
+                alert("Error saving additional info.");
             });
         });
     };
@@ -201,3 +204,4 @@ const UserRegister = () => {
 };
 
 export default UserRegister;
+

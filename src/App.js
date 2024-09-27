@@ -16,6 +16,7 @@ import Search from "./components/bloodbank/Search";
 import HandleRequest from "./components/bloodbank/HandleRequest";
 import HealthCheck from "./components/HealthCheck";
 import ConfirmRegistration from "./components/employee/ConfirmRegistration";
+import EmailVerification from "./components/user/EmailVerification";
 //import Request from "./components/bloodbank/Request";
 
 //
@@ -43,7 +44,8 @@ function App() {
         <Route exact path="/request" element={<RequestClass />} />
         <Route exact path="/login/emp/hr" element={<HandleRequest />} />
         <Route exact path="/health" element={<HealthCheck />} /> {/* Add HealthCheck route */}
-        <Route path="/reg/emp/ConfirmRegistration" element={<ConfirmRegistration />} /> {/* 인증 경로 */}        
+        <Route path="/reg/emp/ConfirmRegistration" element={<ConfirmRegistration />} /> {/* 인증 경로 */}
+        <Route path="/verify-email" element={<EmailVerification />} />
         {/* <Route exact path="/login/usr/dash/req" element={Request}/> */}
       </Routes>
     </div>
