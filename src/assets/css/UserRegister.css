@@ -1,32 +1,36 @@
-.user-register{
+.user-register {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     align-items: center;
     text-align: center;
-    font-family:monospace;}
-.userReg-form{
+    font-family: monospace;
+}
+
+.userReg-form {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
 }
-.userReg-form input{
-    margin:2px;
+
+.userReg-form input {
+    margin: 2px;
     width: 500px;
     height: 30px;
-   padding-left: 1em;
-    border-radius: 30pxd;
+    padding-left: 1em;
+    border-radius: 30px; /* 잘못된 '30pxd' 수정 */
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
 }
-.userReg-form input:focus{
-    outline:none;
+
+.userReg-form input:focus {
+    outline: none;
     content: none;
 }
 
-.userReg-form button{
+.userReg-form button {
     width: 90px;
     height: 30px;
     align-items: center;
@@ -38,7 +42,8 @@
     -o-border-radius: 30px;
     outline: none;
 }
-.userReg-form button:hover{
-    color:white;
+
+.userReg-form button:hover {
+    color: white;
     background-color: black;
 }
