@@ -184,10 +184,10 @@ const UserRegister = () => {
         });
     };
 
-    return (
-        <div>
-            <form onSubmit={handleRegister}>
-                {/* Add form inputs for user registration */}
+     return (
+        <div className="user-register">  {/* 클래스 이름 추가 */}
+            <h2 className="register-title">USER REGISTER</h2>
+            <form className="userReg-form" onSubmit={handleRegister}>  {/* 클래스 이름 추가 */}
                 <input type="text" value={userUserName} onChange={(e) => setuserUsername(e.target.value)} placeholder="Username" required />
                 <input type="password" value={userPassword} onChange={(e) => setuserPassword(e.target.value)} placeholder="Password" required />
                 <input type="email" value={userMail} onChange={(e) => setuserMail(e.target.value)} placeholder="Email" required />

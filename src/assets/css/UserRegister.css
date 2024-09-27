@@ -6,28 +6,30 @@
     font-family: monospace;
 }
 
+.register-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
 .userReg-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* 필드들이 세로로 정렬되도록 설정 */
     text-align: center;
     align-items: center;
+    width: 100%;
 }
 
 .userReg-form input {
-    margin: 2px;
+    margin: 5px;
     width: 500px;
     height: 30px;
     padding-left: 1em;
-    border-radius: 30px; /* 잘못된 '30pxd' 수정 */
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
+    border-radius: 30px;
+    box-sizing: border-box;
 }
 
 .userReg-form input:focus {
     outline: none;
-    content: none;
 }
 
 .userReg-form button {
@@ -36,10 +38,6 @@
     align-items: center;
     border-radius: 30px;
     margin-top: 30px;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
     outline: none;
 }
 
