@@ -91,15 +91,6 @@
 
 // export default EmployeeRegister;
 
-
-
-
-import React, { useState } from "react";
-import { CognitoUserPool } from "amazon-cognito-identity-js";
-import { awsConfig } from "./aws-exports";
-
-import "../../assets/css/EmployeeRegister.css";
-
 // User Pool 정보
 // const poolData = {
 //   UserPoolId: "ap-northeast-2_OXUWvngTQ", // Cognito User Pool ID
@@ -107,6 +98,13 @@ import "../../assets/css/EmployeeRegister.css";
 // };
 
 // const userPool = new CognitoUserPool(poolData);
+
+
+import React, { useState } from "react";
+import { CognitoUserPool } from "amazon-cognito-identity-js";
+import { awsConfig } from "./aws-exports";
+
+import "../../assets/css/EmployeeRegister.css";
 
 const userPool = new CognitoUserPool({
   UserPoolId: awsConfig.UserPoolId, // Cognito User Pool ID
