@@ -4,14 +4,6 @@ import { awsConfig } from "./aws-exports";
 
 import "../../assets/css/EmployeeLogin.css";
 
-// // User Pool 정보
-// const poolData = {
-//   UserPoolId: "ap-northeast-2_OXUWvngTQ", // Cognito User Pool ID
-//   ClientId: "4hkvc5ufmcecvllpnbunqn6jgi", // Cognito App Client ID
-// };
-
-// const userPool = new CognitoUserPool(poolData);
-
 const userPool = new CognitoUserPool({
     UserPoolId: awsConfig.UserPoolId,
     ClientId: awsConfig.ClientId,

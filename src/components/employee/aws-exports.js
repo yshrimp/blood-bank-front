@@ -1,7 +1,7 @@
 // src/aws-exports.js
 export const awsConfig = {
-    UserPoolId: "ap-northeast-2_9o9lBLRCh", // 사용자 풀 ID
-    ClientId: "1nmpikmbb1h6v2aknvser1qklo", // 앱 클라이언트 ID
+    UserPoolId: "ap-northeast-2_QvNyEIJ4h", // 사용자 풀 ID
+    ClientId: "7uluknmj80nvg9ibsk526hr2j0", // 앱 클라이언트 ID
     // 필요한 다른 설정을 추가합니다
   };
   

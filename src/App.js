@@ -17,6 +17,7 @@ import HandleRequest from "./components/bloodbank/HandleRequest";
 import HealthCheck from "./components/HealthCheck";
 import ConfirmRegistration from "./components/employee/ConfirmRegistration";
 import EmailVerification from "./components/user/EmailVerification";
+import PrivateRoute from "./components/employee/PrivateRoute";
 //import Request from "./components/bloodbank/Request";
 
 //
@@ -37,7 +38,7 @@ function App() {
         <Route exact path="/reg/usr" element={<UserRegister />} />
         <Route exact path="/reg/emp" element={<EmployeRegister />} />
         <Route exact path="/login/usr/dash" element={<UserDashboard />} />
-        <Route exact path="/login/emp/dash" element={<EmpDashboard />} />
+	{/*<Route exact path="/login/emp/dash" element={<EmpDashboard />} />*/}
         <Route exact path="/login/emp/ub" element={<UpdateStock />} />
         <Route exact path="/login/emp/uh" element={<UpdateHealth />} />
         <Route exact path="/home/search/blood" element={<Search />} />
@@ -46,6 +47,14 @@ function App() {
         <Route exact path="/health" element={<HealthCheck />} /> {/* Add HealthCheck route */}
         <Route path="/reg/emp/ConfirmRegistration" element={<ConfirmRegistration />} /> {/* 인증 경로 */}
         <Route path="/verify-email" element={<EmailVerification />} />
+	<Route
+          path="/login/emp/dash"
+          element={
+            <PrivateRoute>
+              <EmpDashboard />
+            </PrivateRoute>
+          }
+        />
         {/* <Route exact path="/login/usr/dash/req" element={Request}/> */}
       </Routes>
     </div>
